@@ -1,17 +1,81 @@
-# flutter_lab3_app
+# Лабораторная работа №3. Flutter: структура UI и компонентный подход
 
-A new Flutter project.
+---
 
-## Getting Started
+## Основная информация 
 
-This project is a starting point for a Flutter application.
+**ФИО:** Гвоздева В.А, Деушев Т.Т  
+**Группа:** ИСП-231  
+**Дата:** 22.05.2026 
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Что изучили
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Создание UI через древо виджетов
+2. Создание собственных виджетов-классов
+3. Разбивать код на файлы
+4. Передавать данные через параметры
+5. Работать с состоянием
+
+---
+
+## Скриншот финального приложения
+
+![Скриншот приложения](/img/step6_Gvozdeva_Deushev.png)
+
+---
+
+## Ссылка на репозиторий
+
+[Github repository](https://github.com/nika0-0-11/Flutter_Lab3_Gvozdeva_Deushev)
+
+---
+
+## Инструкция по запуску
+
+### 1. Клонировать репозиторий
+
+```bash
+### Скопировать репозиторий
+git clone https://github.com/nika0-0-11/Flutter_Lab3_Gvozdeva_Deushev
+
+### Перейти в папку проекта
+cd Flutter_Lab3_Gvozdeva_Deushev/
+```
+
+### 2. Установить зависимотси
+
+```bash
+### Установить зависимости
+flutter pub get
+```
+
+### 3. Запустить приложение
+
+```bash
+### Запуск приложения
+flutter run -d chrome
+```
+
+---
+
+## Ответы на вопросы
+
+### 1. Зачем выносить виджеты в отдельные файлы? Что изменится если держать всё в main.dart?
+
+Выносить виджеты в отдельные файлы нужно, чтобы код был читаемым, удобным. Если все держать все в `main.dart`, файл быстро рахрастется, в нем станет трудно ориентироваться.
+
+### 2. Что такое BuildContext? Почему метод build() принимает его как параметр?
+
+`BuildContext` - это ссылка на расположение виджета в общом дереве. Его передают в `build()`, потому что при построении интерфейса виджету часто нужно получить данные от вышестоящих виджетов.
+
+### 3. Чем StatelessWidget отличается от StatefulWidget? Приведите пример когда нужен каждый из них.
+
+- `StatelessWidget` - неизменяемый виджет. После создания его нельзя изменить.
+- `StatefulWidget` - изменяемый виджет. Он может менять свой внешний вид в ответ на действия пользователя или данные.
+
+### 4. Почему Random() создаётся на уровне файла, а не внутри rollDice()?
+
+Если создать `Random()` внутри `rollDice()`, то при каждом нажатии кнопки будет создаваться новый генератор случайных чисел.
+Создав `Random` один раз на уровне файла, мы вызываем один и тот же генератор, что лучше для производительности.
