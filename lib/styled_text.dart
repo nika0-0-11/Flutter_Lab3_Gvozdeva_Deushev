@@ -5,9 +5,13 @@ class StyledText extends StatelessWidget {
   final String text;
   
   @override
-  Widget build(context) {
+  Widget build(BuildContext context) {
     return Text(
       text,
+      style: TextStyle(
+        color: Colors.white,
+        fontSize: 32,
+      )
     );
   }
 }
